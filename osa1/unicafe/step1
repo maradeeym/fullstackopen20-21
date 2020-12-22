@@ -1,0 +1,51 @@
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+
+const Header = (props) => { 
+
+ return(
+  <div>
+    <h1>
+     {props.header}
+    </h1>
+  </div>
+
+ )
+}
+
+const Display = (props) => {
+  return (
+    <div>{props.rating} {props.counter}</div>
+  )
+}
+
+const App = () => {
+  // tallenna napit omaan tilaansa
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+
+  return (
+ <div>
+      <div>
+      <Header header="Palautekysely"/>
+        <button onClick={() => setGood(good + 1)}>
+          HYVÄ
+        </button>
+        <button onClick={() => setNeutral(neutral + 1)}>
+          OK
+        </button>
+        <button onClick={() => setBad(bad + 1)}>
+          PASKA
+        </button>
+      <Header header="Tilastot"/>
+      <Display rating="HYVÄ" counter={good}/>
+      <Display rating="OK" counter={neutral}/>
+      <Display rating="PASKA" counter={bad}/>
+      </div>
+    </div>
+  )
+}
+ReactDOM.render(<App />, 
+  document.getElementById('root')
+)
