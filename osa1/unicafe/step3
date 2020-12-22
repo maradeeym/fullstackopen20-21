@@ -1,0 +1,42 @@
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+
+const Statistics = (props) => {
+  return (
+    <p>
+      {props.text} {props.grading} {props.percent}
+    </p>
+  )    
+}
+
+const App = () => {
+  // tallenna napit omaan tilaansa
+  const [good, setGood] = useState(0)
+  const [neutral, setNeutral] = useState(0)
+  const [bad, setBad] = useState(0)
+
+  return (
+ <div>
+      <h1>Palautekysely</h1>
+        <button onClick={() => setGood(good + 1)}>
+          HYVÄ
+        </button>
+        <button onClick={() => setNeutral(neutral + 1)}>
+          OK
+        </button>
+        <button onClick={() => setBad(bad + 1)}>
+          PASKA
+        </button>
+        <h1>Tilastot</h1>
+        <Statistics text="HYVÄ" grading={good} />
+        <Statistics text="OK" grading={neutral} />
+        <Statistics text="PASKA" grading={bad} />
+        <Statistics text="YHTEENSÄ" grading={bad+neutral+good} />
+        <Statistics text="KESKIARVO" grading={(good-bad)/(bad+neutral+good)} />
+        <Statistics text="POSITIIVISIA" grading={good/(bad+neutral+good)*100} percent="%" />
+    </div>
+  )
+}
+ReactDOM.render(<App />, 
+  document.getElementById('root')
+)
