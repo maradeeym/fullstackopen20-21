@@ -1,24 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const Header = (props) => { 
-
- return(
-  <div>
-    <h1>
-     {props.header}
-    </h1>
-  </div>
-
- )
-}
-
-const Display = (props) => {
-  return (
-    <div>{props.rating} {props.counter}</div>
-  )
-}
-
 const App = () => {
   // tallenna napit omaan tilaansa
   const [good, setGood] = useState(0)
@@ -28,7 +10,7 @@ const App = () => {
   return (
  <div>
       <div>
-      <Header header="Palautekysely"/>
+      <h1>Palautekysely</h1>
         <button onClick={() => setGood(good + 1)}>
           HYVÄ
         </button>
@@ -38,10 +20,10 @@ const App = () => {
         <button onClick={() => setBad(bad + 1)}>
           PASKA
         </button>
-      <Header header="Tilastot"/>
-      <Display rating="HYVÄ" counter={good}/>
-      <Display rating="OK" counter={neutral}/>
-      <Display rating="PASKA" counter={bad}/>
+        <h1>Tilastot</h1>
+      <p>HYVÄ {good}</p>
+      <p>OK {neutral}</p>
+      <p>PASKA {bad}</p>
       </div>
     </div>
   )
