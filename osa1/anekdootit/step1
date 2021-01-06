@@ -14,8 +14,8 @@ const App = (props) => {
 
   return (
     <div>
-      <div>{props.anecdotes[selected]}</div>
       <Button handleClick={handleSelectedClick} text="Random Anocdate" />
+      <div>{props.anecdotes[selected]}</div>
     </div>
   )
 }
