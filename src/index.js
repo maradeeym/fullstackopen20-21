@@ -21,7 +21,7 @@ const App = (props) => {
 
   return (
     <div>
-      <h1>Anecdote of the dayyyy</h1>
+      <h1>Anecdote of the dayyyy broooo</h1>
       {props.anecdotes[selected]}
       <br />
       has {points[selected]} points
