@@ -1,7 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import Course from './components/Course'
-
+import Note from './components/Note'
 
 const App = () => {
   const course = {
@@ -33,4 +31,4 @@ const App = () => {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+export default App
