@@ -26,9 +26,16 @@ const App = () => {
     ]
   }
 
+const reducer = (acc, cur) => acc + cur.exercises;
+ 
+const total = course.parts.reduce(reducer)
+console.log(total)
+
   return (
     <div>
       <Course course={course} />
+      <p>Total of {total} exercises</p>
+      
     </div>
   )
 }
