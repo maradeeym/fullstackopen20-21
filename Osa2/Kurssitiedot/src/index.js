@@ -22,18 +22,11 @@ const App = () => {
         name: 'State of a component',
         exercises: 14,
         id: 3
-      },
-      {
-        name: 'kakkapylly',
-        exercises: 14,
-        id: 3
       }
     ]
   }
 
-let intvalue = 0
-//const reducer = (acc, cur) => acc + cur.exercises, intvalue;
- 
+let intvalue = 0 
 let total = course.parts.reduce((acc, cur) => acc + cur.exercises, intvalue)
 console.log(total)
 
@@ -41,7 +34,6 @@ console.log(total)
     <div>
       <Course course={course} />
       <p>Total of {total} exercises</p>
-      
     </div>
   )
 }
