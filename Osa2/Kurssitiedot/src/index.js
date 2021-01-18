@@ -15,20 +15,26 @@ const App = () => {
       },
       {
         name: 'Using props to pass data',
-        exercises: 7,
+        exercises: 8,
         id: 2
       },
       {
         name: 'State of a component',
         exercises: 14,
         id: 3
+      },
+      {
+        name: 'kakkapylly',
+        exercises: 14,
+        id: 3
       }
     ]
   }
 
-const reducer = (acc, cur) => acc + cur.exercises;
+let intvalue = 0
+//const reducer = (acc, cur) => acc + cur.exercises, intvalue;
  
-const total = course.parts.reduce(reducer)
+let total = course.parts.reduce((acc, cur) => acc + cur.exercises, intvalue)
 console.log(total)
 
   return (
