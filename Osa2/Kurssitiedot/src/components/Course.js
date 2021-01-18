@@ -24,13 +24,25 @@ const Content = ({ course }) => {
     )
   }
 
+const Total = ({course}) => {
+  const parts = course.parts.map(course => course.exercises)
+  return(
+  <p>
+  Total of {parts.reduce((s, p) => s + p)} exercises
+  </p>
+  )
+}
+
 const Course = ({course}) => {
     return(
         <div>
         <Header course={course} />
         <Content course={course} />
+        <Total course={course} />
         </div>
     )
 }
+
+
 
 export default Course
