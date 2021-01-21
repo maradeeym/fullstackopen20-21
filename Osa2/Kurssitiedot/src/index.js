@@ -17,23 +17,6 @@ const App = () => {
         name: 'Using props to pass data',
         exercises: 8,
         id: 2
-      },
-      {
-        name: 'State of a component',
-        exercises: 10,
-        id: 3
-      }
-      ,
-      {
-        name: 'State of a component',
-        exercises: 10,
-        id: 3
-      }
-      ,
-      {
-        name: 'State of a component',
-        exercises: 10,
-        id: 3
       }
     ]
   }
