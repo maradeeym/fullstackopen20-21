@@ -23,6 +23,18 @@ const App = () => {
         exercises: 10,
         id: 3
       }
+      ,
+      {
+        name: 'State of a component',
+        exercises: 10,
+        id: 3
+      }
+      ,
+      {
+        name: 'State of a component',
+        exercises: 10,
+        id: 3
+      }
     ]
   }
 /*
