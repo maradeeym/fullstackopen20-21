@@ -9,12 +9,17 @@ const App = () => {
 
   const addName = (event) => {
     event.preventDefault()
-    const nameObject = {
+    const personObject = {
       name: newName,
       id: persons.length + 1,
     }
-  
-    setPersons(persons.concat(nameObject))
+
+    if (persons.filter(person => person.name === personObject.name).length > 0){
+      window.confirm(
+        `${personObject.name} on jo luettelossa`)
+    }
+    else
+    setPersons(persons.concat(personObject))
     setNewName('')
   }
 
