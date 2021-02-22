@@ -3,13 +3,21 @@ import React from 'react'
 
 const Country = (props) => {
 
-const results = props.countries.filter(country => country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue) )
 
-const showCountry = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map((country) => country.name + ' ')
+
+const results = props.countries.filter(country => country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))
+
+const showCountry = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map(country => country.name)
+
+const showCountries = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map(country => (
+    <li key={country.name}>{country.name}<button value={country.name} onClick={props.setNewValue} >show</button></li> ))
+    console.log(showCountries)
+
+
 const Capital = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map((country) => country.capital)
 const Population = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map((country) => country.population)
 const languages = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map((country) => country.languages.map(languages => (
-  <li> {languages.name} </li>)))
+  <li key={languages.name}> {languages.name}</li>)))
 const flag = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map((country) => country.flag)
 
 
@@ -20,6 +28,7 @@ return (
     <div>
     <p>No Countries To Show</p>
     </div>
+
   )
 
 if(results.length > 10)
@@ -32,9 +41,16 @@ return (
 if(results.length > 1)
 return (
     <div>
-    {showCountry}
+    {showCountries}
     </div>
   )
+
+  if(results.length === 0)
+  return (
+      <div>
+      <p>No countries found...</p>
+      </div>
+    )
 
   else
   return (

@@ -10,7 +10,7 @@ const PersonForm = (props) => {
       number: <input value={props.newNumber} onChange={props.handleNumberChange} />
       </div>
     <div>
-      <button type="submit">add</button>
+      <button onClick="submit">add</button>
     </div>
   </form>
   )}
