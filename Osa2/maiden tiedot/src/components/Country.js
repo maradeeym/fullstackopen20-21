@@ -21,9 +21,7 @@ const languages = props.countries.filter((country) => (country.name.toLowerCase(
 const flag = props.countries.filter((country) => (country.name.toLowerCase().includes(props.filterValue) || country.name.includes(props.filterValue))).map((country) => country.flag)
 
 
-
-
-if(props.filterValue === '')
+if(props.filterValue === '') 
 return (
     <div>
     <p>No Countries To Show</p>
